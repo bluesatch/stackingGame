@@ -1,0 +1,57 @@
+* { box-sizing: border-box;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eaeae3
+}
+
+#gameboard {
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    height: 75vh;
+    background: #fff;
+    border: 3px solid #000;
+}
+
+#gameBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 8px 12px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #109eff;
+    border-radius: 5px;
+}
+
+.cube-section {
+    display: flex;
+    margin-right: 10px;
+    padding: 10px;
+}
+.cube {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+}
+
+.redCube {
+    background: #f00;
+}
+
+.blueCube {
+    background: #00f;
+}
+
+.purpleCube {
+    background: #a020f0;
+}
+
+.yellowCube {
+    background: #ff0;
+}
+
+.greenCube {
+    background: #0f0;
+}

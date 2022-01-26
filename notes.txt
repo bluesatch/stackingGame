@@ -1,0 +1,28 @@
+Stacking game
+
+set trade value
+5 sets of cubes
+player rolls die
+collects number of cubes on die
+if player has trading value amount of cubes, can trade for next set 
+player wins when final set has been reached
+
+Variables
+
+tradeValue
+die 
+dieRoll
+redCubes
+blueCubes
+purpleCubes
+yellowCubes
+GreenCube
+
+Actions
+
+rollDie
+getCubes
+checkWin
+
+if rollCount is less than tradeValue 
+    create cube for each number
