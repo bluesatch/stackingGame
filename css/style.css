@@ -9,8 +9,8 @@ body {
 #gameboard {
     margin: 50px auto;
     padding: 20px;
-    width: 80%;
-    height: 75vh;
+    width: 60%;
+    height: 65vh;
     background: #fff;
     border: 3px solid #000;
 }

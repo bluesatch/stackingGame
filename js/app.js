@@ -9,6 +9,7 @@ class Game {
         this.blueSection = document.getElementById('blueSection')
         this.purpleSection = document.getElementById('purpleSection')
         this.yellowSection = document.getElementById('yellowSection')
+        this.cube
         this.dieRoll
         this.redCubes = []
         this.blueCubes = []
@@ -80,55 +81,56 @@ class Game {
             
             this.displayCube(this.blueCubes, this.blueSection)
         } else if (rollCount > this.tradeValue) {
-        //     if (rollCount % this.tradeValue != 0) {
-        //         let remainder = rollCount % this.tradeValue
+            // console.log('roll is greater')
+            let remainder = rollCount % this.tradeValue
+            let whole = Math.floor(rollCount / this.tradeValue)
 
-        //         for (let i = 1; i <= remainder; i++){
-        //             cube.classList.add('redCube') 
-        //             this.redCubes.push(cube)
-        //         }
-        //         this.displayCube(this.redCubes, this.redSection)
+            console.log(whole, remainder)
 
-        //         if(Math.floor(rollCount % this.tradeValue == 1)) {
-        //             cube.classList.add('blueCube')
+            // make red cubes 
+            for (let i = 1; i <= remainder; i++) {
+                let cube = document.createElement('div')
+                cube.className = 'cube redCube'
+                this.redCubes.push(cube)
 
-        //         } else if (Math.floor(rollCount % this.tradeValue == 2)) {
+                this.displayCube(this.redCubes, this.redSection)
+            }
 
-        //         }
-                
-        //         this.displayCube(this.blueCubes, this.blueSection)
-        //     } 
+            // make blue cubes
+            if (whole >= 1) {
+                console.log(whole)
+                for (let i = 1; i <= whole; i++) {
+                    let cube = document.createElement('div')
+                    cube.className = 'cube blueCube'
+                    this.blueCubes.push(cube)
 
+                    this.displayCube(this.blueCubes, this.blueSection)
+                }
 
-        // }
-        
-        // if (rollCount > this.tradeValue) {
-        //     let remainder = rollCount % this.tradeValue
-        //     console.log(remainder)
-        //     cube.classList.add('blueCube')
-        //     let blueCube = document.getElementsByClassName('blueCube')
-        //     console.log(blueCube)
-        //     this.blueCubes.push(blueCube)
-        //     this.blueSection.appendChild(cube)
+            }
+        }
 
-        //     for (let i = 1; i <= remainder; i++) {
-        //         cube.classList.remove('blueCube')
-        //         cube.classList.add('redCube')
-        //         let redCube = document.getElementsByClassName('redCube')
-        //         this.redCubes.push(redCube)
-        //         this.redSection.appendChild(cube)
-        //     }
-        // }
-        // console.log(`red cubes: ${this.redCubes}, blue cubes ${this.blueCubes}`)
     }
 
-}
-displayCube(arr, section){
-    for (let i = 0; i < arr.length; i++) {
-        section.appendChild(arr[i])
+    displayCube(arr, section){
+        for (let i = 0; i < arr.length; i++) {
+            section.appendChild(arr[i])
+        }
     }
+
+    // tradeCube(prevArr, newArr, section) {
+    //     // if this.redCubes.length is greater than this.tradeValue
+    //     console.log(prevArr.length, this.tradeValue)
+    //     if (prevArr.length >= this.tradeValue) {
+    //         this.displayCube(newArr, section)
+    //     }
+    // }
+    // removeCubes(arr) {
+
+    // }
+
 }
-}
+
 let action = new Game();
 
 const gameBtn = document.getElementById('gameBtn')
